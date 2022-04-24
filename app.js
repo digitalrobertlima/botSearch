@@ -11,8 +11,8 @@ async function openBrowser() {
 	await page.goto(url);
 	console.log('Fui para ' + url);
 
-	page.click('.cookie-consent-banner-opt-out__action--primary');
-	page.click('.cookie-consent-snackbar__close');
+	//page.click('.cookie-consent-banner-opt-out__action--primary');
+	//page.click('.cookie-consent-snackbar__close');
 
 	await page.waitForSelector('#cb1-edit');
 	await page.type('#cb1-edit', searchFor);
