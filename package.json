@@ -1,0 +1,23 @@
+{
+  "name": "testcrash",
+  "version": "1.0.0",
+  "description": "an app for crash monitoring",
+  "main": "app.js",
+  "dependencies": {
+    "cli-color": "^2.0.2",
+    "puppeteer": "^13.6.0",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "blaze",
+    "crash",
+    "bot",
+    "monitoring"
+  ],
+  "author": "scr1pt3r",
+  "license": "MIT"
+}
