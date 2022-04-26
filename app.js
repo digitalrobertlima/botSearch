@@ -1,6 +1,6 @@
 const pup = require('puppeteer');
 
-const url = "https://www.google.com.br/";
+const url = "localhost:3000";
 const searchFor = "iphone submarino";
 
 async function openBrowser() {
