@@ -8,9 +8,19 @@ async function openBrowser() {
 	const page = await browser.newPage();
 	console.log('Iniciei!');
 
+	await page.setRequestInterception(true);
+	page.on('request', request => {
+		if(request.resourceType() === 'script') {
+			request.abort();
+		} else {
+			request.continue();
+		}
+	});
+
 	await page.goto(url);
 	console.log('Fui para ' + url);
 
+	/*
 	//page.click('.cookie-consent-banner-opt-out__action--primary');
 	//page.click('.cookie-consent-snackbar__close');
 	
@@ -27,6 +37,10 @@ async function openBrowser() {
 
 	await page.waitForTimeout(3000);
 
+	*/
+
+	//Fechar browser:
+	
 	//await browser.close();
 	//console.log("Fechei");
 }
