@@ -1,7 +1,7 @@
 const pup = require('puppeteer');
 
-const url = "https://www.mercadolivre.com.br/";
-const searchFor = "cafeteira";
+const url = "https://www.google.com.br/";
+const searchFor = "iphone submarino";
 
 async function openBrowser() {
 	const browser = await pup.launch({headless: false});
@@ -13,19 +13,22 @@ async function openBrowser() {
 
 	//page.click('.cookie-consent-banner-opt-out__action--primary');
 	//page.click('.cookie-consent-snackbar__close');
-
-	await page.waitForSelector('#cb1-edit');
-	await page.type('#cb1-edit', searchFor);
+	
+	//await page.click('.cookie-consent-banner-opt-out__action--primary');
+	//await page.click('.cookie-consent-snackbar__close')
+	
+	await page.waitForSelector('.gLFyf.gsfi');
+	await page.type('.gLFyf.gsfi', searchFor);
 
 	await Promise.all([
 		page.waitForNavigation(),
-		page.click('.nav-search-btn')
+		page.click('#gNO89b')
 	]);
 
 	await page.waitForTimeout(3000);
 
-	await browser.close();
-	console.log("Fechei");
+	//await browser.close();
+	//console.log("Fechei");
 }
 
 openBrowser();
